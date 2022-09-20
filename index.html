@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <style>
+        svg {
+            width : 500px;
+            height : 500px;
+            border : 1px gray solid;
+        }
+    </style>
+</head>
+<body>
+    <svg>
+        <g>
+            <circle cx="50" cy="50" r="30"></circle>
+            <circle cx="150" cy="150" r="30"></circle>
+            <circle cx="250" cy="250" r="30"></circle>
+            <rect x="200" y="50" width="100" height="100" style="fill: red; stroke: black; stroke-width:30px; "></rect>
+            <rect x="300" y="50" width="100" height="100" style="fill:beige;"></rect>
+            <path d="M 300,350 300,300 350,350 350,300" style="fill:blank;"></path>
+            <path d="M 100,300 100,350 150,350 150,300" style="fill:aquamarine"></path>
+        </g>
+        <text x="400px" y="400px">hello world</text>
+    </svg>
+    <div class="canvas"></div>
+    <script>
+        const canvas = d3.select(".canvas");
+
+        const svg = canvas.append("svg")
+        .attr("width", 1000)
+        .attr("height", 1000)
+        
+        svg.append('text')
+        .attr('x', 200)
+        .attr('y', 200)
+        .text("hello world")
+        .style("font-weight", "bold")
+        .style("font-size", "34px")
+        .style("font-family", 'Black Han Sans')
+
+        svg.append("rect")
+        // .attr('x', 200)
+        // .attr('y', 200)
+        .attr('width', 200)
+        .attr('height', 200)
+        .attr('fill', 'hotpink')
+
+        svg.append('circle')
+        .attr('cx', 200)
+        .attr('cy', 200)
+        .attr('r', 10)
+        .attr('fill', 'skyblue')
+
+        svg.append('line')
+        .attr('x1', 200)
+        .attr('y1', 200)
+        .attr('x2', 300)
+        .attr('y2', 300)
+        .attr('stroke', 'red');
+
+
+
+    </script>
+</body>
+</html>
